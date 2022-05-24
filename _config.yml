@@ -32,10 +32,10 @@ twitter_username: maajid2002
 github_username:  maajidhusain
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes"
+theme: Alpha-Jekyll-Theme-master
+
 plugins:
   - jekyll-feed
-  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
