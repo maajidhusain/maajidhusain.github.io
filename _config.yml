@@ -32,7 +32,7 @@ twitter_username: maajid2002
 github_username:  maajidhusain
 
 # Build settings
-theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
