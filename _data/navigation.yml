@@ -1,0 +1,19 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Posts"
+    url: /posts/
+  - title: "GitHub"
+    url: https://github.com/maajidhusain
+
+
+#Sidevar - displays under Author Profile
+my_sidebar:
+  - title: "Category"
+    url: /categories/
+  - title: "Tag"
+    url: /tags/
