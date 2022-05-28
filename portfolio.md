@@ -101,26 +101,6 @@ h1{
 </style>
 
 
-
-
-### Hard Skills:
-- Python
-    - Numpy
-    - Pandas
-    - Seaborn
-- Java
-- C
-- R
-    - R Script
-    - R Markdown
-- HTML
-
-### Soft Skills
-- Public Speaking
-- Event Planning
-- Graphic Design
-- Teamwork
-
 ------------
 
 ## Projects
