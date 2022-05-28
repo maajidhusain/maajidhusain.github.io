@@ -174,13 +174,13 @@ function showSlides(n) {
 
 ## 2.  About my Life
 
-I am a student first, but in my free time I really enjoy to explore nature, go longboarding, spend time with friends, and working towards my career and academic goals.
+I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.
 
 --------------------
 
 ## 3.  Reading
 
-Leisurly reading is something I have always been interested in. Some of my favorite books include:
+Leisurely reading is something I have always been interested in. Some of my favorite books include:
 1. *The Bartimaeus Sequence* by Jonathan Stroud
 2. *Great Expectations* by Charles Dickens
 3. *The Autobiography of Malcom X* by Malcolm X and Alex Haley

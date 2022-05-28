@@ -6,7 +6,7 @@ categories: aboutme
 ---
 Hello there!
 
-This website is an insight into my life. It is a way to get to know me if you haven't had the change. I will use this blog post as a declaration of my intent towards creating this webpage
+This website is an insight into my life. It is a way to get to know me if you haven't had the chance. I will use this blog post as a declaration of my intent towards creating this webpage.
 
 As a student, there are many oppertunities to learn, work in a team, and devlop skills needed in the workforce. However, there is limited space to showcase what I have learned to my peers, recruiters, and anyone who is interested. This blog allows me to give an insight into the life of a student pursuing their ambitions to be a data-driven leader in the modern workforce.
 
