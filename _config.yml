@@ -41,7 +41,7 @@ plugins:
 #site author profile
 author:
   name          : "Maajid Husain"
-  avatar        : "assets/images/myheadshot.PNG"
+  avatar        : "assets/images/myheadshot.png"
   bio           : "Data Driven Student and Leader"
   location      : "Leesburg, VA"
   email         : mah2ksc@virginia.edu
