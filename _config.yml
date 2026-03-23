@@ -32,11 +32,13 @@ twitter_username: maajid2002
 github_username:  maajidhusain
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
 
 #site author profile
 author:
