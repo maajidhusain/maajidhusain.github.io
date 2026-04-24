@@ -47,32 +47,7 @@ export default function Contact() {
         <SocialIcons />
       </div>
 
-      {/* Direct contact */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-5">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Email</p>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <span className="text-gray-500">Personal</span>
-              <a href="mailto:maajidhusain02@outlook.com" className="text-blue-400 hover:text-blue-300 transition-colors truncate">
-                maajidhusain02@outlook.com
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-gray-500">School</span>
-              <a href="mailto:mah2ksc@virginia.edu" className="text-blue-400 hover:text-blue-300 transition-colors truncate">
-                mah2ksc@virginia.edu
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-5">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Phone</p>
-          <a href="tel:5715286133" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
-            +1 (571) 528-6133
-          </a>
-        </div>
-      </div>
+    
 
       {/* Contact form */}
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6">

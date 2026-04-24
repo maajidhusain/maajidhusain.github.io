@@ -17,22 +17,15 @@ export default function Home() {
         </div>
         <div className="text-center sm:text-left">
           <h1 className="text-4xl font-bold text-white mb-2">Maajid Husain</h1>
-          <p className="text-blue-400 text-lg font-medium">Data Driven Student and Leader</p>
-          <p className="text-gray-400 text-sm mt-1">Leesburg, VA &bull; University of Virginia</p>
+          <p className="text-blue-400 text-lg font-medium">Data Driven AI Dev and Builder</p>
+          <p className="text-gray-400 text-sm mt-1">Leesburg, VA &bull; University of Virginia &bull; Capital One</p>
         </div>
       </div>
 
       <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 max-w-2xl w-full text-center">
         <p className="text-gray-200 text-lg leading-relaxed">Hey!</p>
         <p className="text-gray-200 mt-4 leading-relaxed">
-          My name is Maajid Husain. I am currently a third-year student at the University of Virginia with a major in Applied Statistics with a concentration in Finance and Business, and a second major in Computer Science. As a student immersed in technical studies, I have developed my skills in problem solving with the ability to apply my learned knowledge to help in solving modern day problems.
-        </p>
-      </div>
-
-      <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 max-w-2xl w-full">
-        <h2 className="text-xl font-semibold text-white mb-4 text-center">About Me</h2>
-        <p className="text-gray-300 leading-relaxed text-center">
-          Hello. I am Maajid Husain, a third year at the University of Virginia majoring in Applied Statistics with a concentration in Finance and Business, and a second major in Computer Science. This is a webpage where I tell you about myself, and show my aspirations and goals through my sample projects, my extracurricular ambitions, and my participation in UVA&apos;s clubs. I hope you find what I do interesting, and if you have any further questions feel free to reach out to me from my contact information on this page.
+          Currently a Business Analyst at Capital One. Graduated from the University of Virginia in 2024 with a double major in Applied Statistics and Computer Science. I have a passion for building projects that combine data, AI, and software development to solve real-world problems. I am always looking for new opportunities to learn and grow, so feel free to reach out if you want to connect or collaborate on a project!
         </p>
       </div>
 
