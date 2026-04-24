@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SocialIcons } from "@/components/ui/social-icons";
+import Navbar from "@/components/Navbar";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -11,113 +11,93 @@ export default function Contact() {
     setStatus("submitting");
     const form = e.currentTarget;
     const data = new FormData(form);
-
-    if (data.get("_honeypot")) {
-      setStatus("error");
-      return;
-    }
-
+    if (data.get("_honeypot")) { setStatus("error"); return; }
     try {
       const res = await fetch("https://getform.io/f/c23a28ac-a108-4589-8f5c-3c8702566925", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        method: "POST", body: data, headers: { Accept: "application/json" },
       });
-      if (res.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+      if (res.ok) { setStatus("success"); form.reset(); }
+      else setStatus("error");
+    } catch { setStatus("error"); }
   }
 
   return (
-    <div className="space-y-10">
-      <h1 className="text-3xl font-bold text-white border-b border-gray-700 pb-4">Contact</h1>
-
-      {/* Social icons hero */}
-      <div className="flex flex-col items-center gap-6 py-8">
-        <div className="text-center space-y-2">
-          <h2 className="text-2xl font-semibold tracking-tight text-white">Connect with me</h2>
-          <p className="text-sm text-neutral-400">Find me across the web</p>
-        </div>
-        <SocialIcons />
-      </div>
-
-    
-
-      {/* Contact form */}
-      <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6">
-        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-6">Send a message</p>
-
-        {status === "success" ? (
-          <div className="text-center py-8">
-            <div className="text-green-400 text-xl font-semibold mb-2">Message sent!</div>
-            <p className="text-gray-400">Thank you for reaching out. I will get back to you soon.</p>
-            <button onClick={() => setStatus("idle")} className="mt-4 text-blue-400 hover:underline text-sm">
-              Send another message
-            </button>
+    <div className="h-screen overflow-hidden text-slate-900">
+      <Navbar />
+      <main className="relative flex h-full items-center">
+        <div className="w-[500px] ml-24 glass-panel rounded-2xl p-10 flex flex-col gap-8 shadow-sm">
+          <div className="flex flex-col gap-2">
+            <h1 className="font-display text-5xl font-bold tracking-tight">Get in Touch</h1>
+            <p className="text-slate-900/60 font-light text-lg leading-relaxed">
+              Open to opportunities, collaborations, and conversations.
+            </p>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <input type="text" name="_honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
-                  Name <span className="text-red-400">*</span>
-                </label>
-                <input type="text" name="name" id="name" required placeholder="Your name"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors text-sm" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
-                  Email <span className="text-red-400">*</span>
-                </label>
-                <input type="email" name="email" id="email" required placeholder="your@email.com"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors text-sm" />
-              </div>
+          {status === "success" ? (
+            <div className="flex flex-col items-center justify-center py-10 text-center gap-4">
+              <p className="font-display text-2xl text-slate-900">Message received. I will be in touch.</p>
+              <button
+                onClick={() => setStatus("idle")}
+                className="text-slate-900/60 text-sm uppercase tracking-[1px] hover:text-slate-900 transition-colors"
+              >
+                Send another
+              </button>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full">
+              <input type="text" name="_honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
-            <div>
-              <label htmlFor="platform" className="block text-sm font-medium text-gray-300 mb-1.5">
-                Reason for reaching out <span className="text-red-400">*</span>
-              </label>
-              <select name="platform" id="platform" required
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-blue-500 transition-colors text-sm">
-                <option value="">Select an option</option>
-                <option>Recruiting</option>
-                <option>Connecting</option>
-                <option>Interested Party</option>
-                <option>Other (please specify in message)</option>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Name"
+                className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-lg font-light"
+              />
+
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Email Address"
+                className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-lg font-light"
+              />
+
+              <select
+                name="platform"
+                required
+                className="glass-input py-3 text-slate-900 text-lg font-light appearance-none bg-transparent cursor-pointer"
+              >
+                <option value="" className="bg-white">Reason for reaching out...</option>
+                <option className="bg-white">Recruiting</option>
+                <option className="bg-white">Connecting</option>
+                <option className="bg-white">Interested Party</option>
+                <option className="bg-white">Other</option>
               </select>
-            </div>
 
-            <div>
-              <label htmlFor="question" className="block text-sm font-medium text-gray-300 mb-1.5">
-                Message <span className="text-red-400">*</span>
-              </label>
-              <textarea name="question" id="question" required placeholder="What's on your mind?"
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-3.5 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors text-sm resize-none" rows={4} />
-            </div>
+              <textarea
+                name="question"
+                required
+                placeholder="Your message..."
+                className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-lg font-light min-h-[120px] resize-none"
+                rows={4}
+              />
 
-            {status === "error" && (
-              <p className="text-red-400 text-sm">Something went wrong. Please try again or email directly.</p>
-            )}
+              {status === "error" && (
+                <p className="text-red-700/80 text-sm">Something went wrong. Please try again.</p>
+              )}
 
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-semibold px-6 py-2.5 rounded-xl transition-colors text-sm"
-            >
-              {status === "submitting" ? "Sending…" : "Send message"}
-            </button>
-          </form>
-        )}
-      </div>
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="mt-2 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white rounded-full py-4 px-8 uppercase tracking-[1px] text-sm font-semibold transition-all transform hover:-translate-y-0.5 w-full"
+              >
+                {status === "submitting" ? "Sending…" : "Send Message"}
+              </button>
+            </form>
+          )}
+        </div>
+      </main>
     </div>
   );
 }

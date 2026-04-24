@@ -1,66 +1,59 @@
+import Navbar from "@/components/Navbar";
+import Image from "next/image";
 import ImgStack from "@/components/ui/image-stack";
-
-const bathroomImageUrls = [
-  "/images/bathroombefore.png",
-  "/images/bathroomafter1.png",
-  "/images/bathroomafter2.png",
-];
 
 export default function About() {
   return (
-    <div className="space-y-12">
-      <h1 className="text-3xl font-bold text-white border-b border-gray-700 pb-4">About</h1>
-
-      <nav className="bg-gray-900 border border-gray-700 rounded-lg p-4">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Table of Contents</h2>
-        <ol className="list-decimal list-inside space-y-1 text-blue-400">
-          <li><a href="#about-me" className="hover:underline">About Me</a></li>
-          <li><a href="#reading" className="hover:underline">Reading</a></li>
-          <li><a href="#construction" className="hover:underline">Construction &amp; Manual Labor</a></li>
-        </ol>
-      </nav>
-
-      <section id="about-me">
-        <h2 className="text-2xl font-semibold text-white mb-4">1. About My Life</h2>
-        <p className="text-gray-300 leading-relaxed">
-          I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.
-        </p>
-      </section>
-
-      <hr className="border-gray-700" />
-
-      <section id="reading">
-        <h2 className="text-2xl font-semibold text-white mb-4">2. Reading</h2>
-        <p className="text-gray-300 mb-3">Leisurely reading is something I have always been interested in. Some of my favorite books include:</p>
-        <ol className="list-decimal list-inside space-y-2 text-gray-300">
-          <li><em>The Bartimaeus Sequence</em> by Jonathan Stroud</li>
-          <li><em>Great Expectations</em> by Charles Dickens</li>
-          <li><em>The Autobiography of Malcolm X</em> by Malcolm X and Alex Haley</li>
-          <li><em>Hatchet</em> by Gary Paulsen</li>
-        </ol>
-      </section>
-
-      <hr className="border-gray-700" />
-
-      <section id="construction">
-        <h2 className="text-2xl font-semibold text-white mb-4">3. Construction + Manual Labor</h2>
-        <p className="text-gray-300 leading-relaxed mb-4">
-          During the COVID-19 Pandemic, I found myself having an abundance of free time with too much time spent on my phone, laptop, or TV. Trying to figure out what to do with my time, I decided to start as an apprentice for a contracting company. On multiple residential and commercial jobs, I picked up many handyman skills including:
-        </p>
-        <ul className="list-disc list-inside space-y-1 text-gray-300 mb-6">
-          <li>Carpentry</li>
-          <li>Tile work</li>
-          <li>Electrician skills</li>
-          <li>Masonry</li>
-          <li>Drywall</li>
-        </ul>
-        <p className="text-gray-300 mb-6">
-          Using these skills, I have completed many projects at home, from building a large firepit/grill to renovating two of the bathrooms in my home.
-        </p>
-        <div className="h-full flex items-center justify-center">
-          <ImgStack images={bathroomImageUrls} />
+    <div className="h-screen overflow-hidden text-slate-900">
+      <Navbar />
+      <main className="flex h-full pt-24 items-center px-24">
+        <div className="glass-panel rounded-2xl w-full max-w-[720px] h-[calc(100vh-7rem)] flex flex-col overflow-hidden">
+          <div className="flex items-center gap-6 p-8 pb-4 border-b border-white/20 shrink-0">
+            <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-white/40 grayscale">
+              <Image src="/images/myheadshot.png" alt="Maajid Husain" width={96} height={96} className="object-cover w-full h-full" />
+            </div>
+            <div>
+              <h1 className="font-display text-4xl font-bold tracking-tight">About Me</h1>
+              <p className="text-slate-900/60 text-xs uppercase tracking-[2px] mt-2">
+                Leesburg, VA · University of Virginia · Capital One
+              </p>
+            </div>
+          </div>
+          <div className="p-8 pt-6 overflow-y-auto glass-scroll grow">
+            <div className="text-base font-light leading-[2] text-slate-900/80 space-y-8">
+              <div>
+                <h2 className="font-display text-xl font-bold text-slate-900 mb-3">Life</h2>
+                <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
+              </div>
+              <div>
+                <h2 className="font-display text-xl font-bold text-slate-900 mb-3">Reading</h2>
+                <p>Leisurely reading is something I have always been interested in. Some of my favorites:</p>
+                <ol className="list-decimal list-inside space-y-1 mt-2">
+                  <li><em>The Bartimaeus Sequence</em> — Jonathan Stroud</li>
+                  <li><em>Great Expectations</em> — Charles Dickens</li>
+                  <li><em>The Autobiography of Malcolm X</em> — Malcolm X &amp; Alex Haley</li>
+                  <li><em>Hatchet</em> — Gary Paulsen</li>
+                </ol>
+              </div>
+              <div>
+                <h2 className="font-display text-xl font-bold text-slate-900 mb-3">Construction &amp; Manual Labor</h2>
+                <p>During COVID-19, I found myself with an abundance of free time. I started as an apprentice for a contracting company and picked up many handyman skills:</p>
+                <ul className="list-disc list-inside space-y-1 mb-4 mt-2">
+                  <li>Carpentry</li>
+                  <li>Tile work</li>
+                  <li>Electrician skills</li>
+                  <li>Masonry</li>
+                  <li>Drywall</li>
+                </ul>
+                <p>Using these skills, I completed many projects at home — from building a large firepit to renovating two bathrooms.</p>
+                <div className="mt-6 flex justify-center">
+                  <ImgStack images={["/images/bathroombefore.png", "/images/bathroomafter1.png", "/images/bathroomafter2.png"]} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </main>
     </div>
   );
 }
