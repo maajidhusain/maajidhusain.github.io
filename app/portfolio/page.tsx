@@ -9,8 +9,18 @@ import {
   FileSearch,
   Users,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const projects = [
+type Project = {
+  title: string;
+  tags: string;
+  category: string;
+  description: string;
+  link?: string;
+  Icon: LucideIcon;
+};
+
+const projects: Project[] = [
   {
     title: "SABRHacks",
     tags: "TypeScript · Supabase",
@@ -79,65 +89,90 @@ const projects = [
   },
 ];
 
+function ProjectCard({ project }: { project: Project }) {
+  const { title, tags, category, description, link, Icon } = project;
+  return (
+    <div className="group glass-panel rounded-2xl p-6 flex flex-col gap-5 cursor-default hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
+      {/* Icon area */}
+      <div className="w-full aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors duration-500">
+        <Icon
+          size={40}
+          className="text-white/40 group-hover:text-[#ec5b13] transition-colors duration-500"
+          strokeWidth={1.25}
+        />
+      </div>
+
+      {/* Meta */}
+      <div>
+        <p className="text-white/50 text-[10px] font-semibold tracking-widest uppercase mb-1">
+          {category}
+        </p>
+        <h3 className="text-white text-xl font-display font-medium leading-snug group-hover:text-[#ec5b13] transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-white/50 text-[11px] font-semibold tracking-widest uppercase mt-1">
+          {tags}
+        </p>
+      </div>
+
+      <p className="text-white/60 text-sm font-light leading-relaxed flex-1">
+        {description}
+      </p>
+
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] uppercase tracking-widest font-semibold text-white/40 hover:text-[#ec5b13] transition-colors self-start"
+        >
+          View →
+        </a>
+      )}
+    </div>
+  );
+}
+
+const col1 = projects.filter((_, i) => i % 2 === 0);
+const col2 = projects.filter((_, i) => i % 2 !== 0);
+
 export default function Portfolio() {
   return (
     <div className="h-screen overflow-y-auto glass-scroll">
-      {/* Solid background to cover the global image */}
-      <div className="fixed inset-0 z-0 bg-[#FDFBF7]" />
+      {/* Dark overlay over the global background image */}
+      <div className="fixed inset-0 z-0 bg-black/55" />
 
-      <Navbar />
+      <Navbar variant="dark" />
 
-      <main className="relative z-10 pt-32 pb-24 px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <header className="mb-16">
-            <p className="text-xs uppercase tracking-[4px] text-slate-400 font-semibold mb-4">
-              Selected Work
-            </p>
-            <h1 className="font-display text-6xl font-bold text-slate-900 leading-tight">
-              The Portfolio
+      <main className="relative z-10 px-6 md:px-12 lg:px-24 pt-36 pb-24">
+        <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 lg:gap-24">
+
+          {/* Left: title */}
+          <div className="lg:w-1/3 lg:pt-32 lg:sticky lg:top-36 lg:self-start">
+            <h1 className="text-white text-5xl md:text-7xl font-display font-bold leading-tight mb-6 drop-shadow-lg">
+              The<br />Portfolio
             </h1>
-          </header>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="group bg-white border border-slate-100 rounded-2xl p-8 flex flex-col gap-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-slate-900 group-hover:border-slate-900 transition-all duration-300">
-                    <project.Icon size={18} className="text-slate-400 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-[10px] uppercase tracking-[2.5px] text-slate-400 font-semibold">
-                      {project.category}
-                    </span>
-                    <h2 className="font-display text-xl font-bold text-slate-900 leading-snug">
-                      {project.title}
-                    </h2>
-                    <p className="text-[11px] uppercase tracking-[1.5px] text-slate-400">
-                      {project.tags}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-slate-500 text-sm font-light leading-relaxed flex-1">
-                  {project.description}
-                </p>
-
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] uppercase tracking-[1.5px] font-semibold text-slate-400 hover:text-slate-900 transition-colors self-start"
-                  >
-                    View →
-                  </a>
-                )}
-              </div>
-            ))}
+            <p className="text-white/70 text-lg max-w-sm font-light leading-relaxed">
+              A curated selection of projects at the intersection of data, AI, and software engineering.
+            </p>
           </div>
+
+          {/* Right: offset two-column grid */}
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 pb-12">
+            {/* Column 1 — starts lower */}
+            <div className="flex flex-col gap-8 md:gap-10 md:mt-24">
+              {col1.map((p) => (
+                <ProjectCard key={p.title} project={p} />
+              ))}
+            </div>
+            {/* Column 2 — flush top */}
+            <div className="flex flex-col gap-8 md:gap-10">
+              {col2.map((p) => (
+                <ProjectCard key={p.title} project={p} />
+              ))}
+            </div>
+          </div>
+
         </div>
       </main>
     </div>
