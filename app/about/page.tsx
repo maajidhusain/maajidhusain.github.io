@@ -1,5 +1,6 @@
 import Slideshow from "@/components/Slideshow";
 import Image from "next/image";
+import ImgStack from "@/components/ui/image-stack";
 
 const slides = [
   { src: "/images/img5.jpeg", caption: "Fireside Chat at Data Fest at UVA 2022" },
@@ -9,10 +10,10 @@ const slides = [
   { src: "/images/img4.jpeg", caption: "Spending time with friends" },
 ];
 
-const bathroomImages = [
-  { src: "/images/bathroombefore.png", desc: "Bathroom before renovation" },
-  { src: "/images/bathroomafter1.png", desc: "Image 1 of bathroom after renovation" },
-  { src: "/images/bathroomafter2.png", desc: "Image 2 of bathroom after renovation" },
+const bathroomImageUrls = [
+  "/images/bathroombefore.png",
+  "/images/bathroomafter1.png",
+  "/images/bathroomafter2.png",
 ];
 
 export default function About() {
@@ -74,23 +75,8 @@ export default function About() {
         <p className="text-gray-300 mb-6">
           Using these skills, I have completed many projects at home, from building a large firepit/grill to renovating two of the bathrooms in my home.
         </p>
-        <div className="flex flex-wrap gap-4">
-          {bathroomImages.map((img) => (
-            <div key={img.src} className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
-              <a href={img.src} target="_blank" rel="noopener noreferrer">
-                <div className="relative w-60 h-48">
-                  <Image
-                    src={img.src}
-                    alt={img.desc}
-                    fill
-                    sizes="240px"
-                    className="object-cover hover:opacity-90 transition-opacity"
-                  />
-                </div>
-              </a>
-              <p className="text-gray-400 text-sm text-center px-3 py-2">{img.desc}</p>
-            </div>
-          ))}
+        <div className="h-full flex items-center justify-center">
+          <ImgStack images={bathroomImageUrls} />
         </div>
       </section>
     </div>

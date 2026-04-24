@@ -6,51 +6,10 @@ export default function Portfolio() {
       <nav className="bg-gray-900 border border-gray-700 rounded-lg p-4">
         <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Table of Contents</h2>
         <ol className="list-decimal list-inside space-y-1 text-blue-400">
-          <li>
-            <a href="#coursework" className="hover:underline">Relevant Coursework</a>
-            <ul className="ml-6 mt-1 space-y-1 list-disc list-inside">
-              <li><a href="#first-year" className="hover:underline">First Year</a></li>
-              <li><a href="#second-year" className="hover:underline">Second Year</a></li>
-              <li><a href="#third-year" className="hover:underline">Third Year</a></li>
-            </ul>
-          </li>
           <li><a href="#skills" className="hover:underline">Skills</a></li>
           <li><a href="#projects" className="hover:underline">Projects</a></li>
         </ol>
       </nav>
-
-      <section id="coursework">
-        <h2 className="text-2xl font-semibold text-white mb-6">Relevant Coursework</h2>
-        <div className="space-y-6">
-          <div id="first-year" className="bg-gray-900 border border-gray-700 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-blue-400 mb-3">First Year</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 1602</span> Introduction to Data Science in Python</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">ENWR 1520</span> Writing about Housing Inequality</li>
-            </ul>
-          </div>
-          <div id="second-year" className="bg-gray-900 border border-gray-700 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-blue-400 mb-3">Second Year</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 2120</span> Introduction to Statistical Analysis</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3110</span> Foundations of Statistics (Probability and Linear Algebra)</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3130</span> Design and Analysis of Sample Surveys</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">CS 2100</span> Data Structures and Algorithms</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">CS 2130</span> Computer Systems and Organization</li>
-            </ul>
-          </div>
-          <div id="third-year" className="bg-gray-900 border border-gray-700 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-blue-400 mb-3">Third Year <span className="text-gray-500 text-sm font-normal">(In Progress)</span></h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3220</span> Introduction to Regression Analysis</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3120</span> Mathematical Statistics</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3250</span> Data Analysis in Python</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">CS 3140</span> Software Development Essentials</li>
-              <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">CS 2120</span> Discrete Mathematics</li>
-            </ul>
-          </div>
-        </div>
-      </section>
 
       <hr className="border-gray-700" />
 
@@ -89,15 +48,40 @@ export default function Portfolio() {
 
       <section id="projects">
         <h2 className="text-2xl font-semibold text-white mb-4">Projects</h2>
-        <p className="text-gray-300 mb-4">View my projects on GitHub:</p>
-        <a
-          href="https://maajidhusain.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-white text-gray-900 font-medium px-5 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-        >
-          Continue to Projects
-        </a>
+
+        <div className="space-y-6">
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-5">
+            <h3 className="text-lg font-semibold text-blue-400 mb-3">SABRHacks</h3>
+            <p className="text-gray-300 mb-3">
+              A web application built using TypeScript with a Supabase SQL database backend. The platform is designed to streamline hackathon management and collaboration. Visit the live site: <a href="https://sabr-hacks.vercel.app" className="text-blue-400 hover:underline">SABRHacks</a>.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-5">
+            <h3 className="text-lg font-semibold text-blue-400 mb-3">PS-Acq-Claude-Code-Test</h3>
+            <p className="text-gray-300 mb-3">
+              A collaborative project showcasing various AI-driven solutions, including fraud prediction pipelines and software development essentials. Explore the repository: <a href="https://github.com/maajidhusain/PS-Acq-Claude-Code-Test" className="text-blue-400 hover:underline">GitHub</a>.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-5">
+            <h3 className="text-lg font-semibold text-blue-400 mb-3">Work Projects</h3>
+            <p className="text-gray-300 mb-3">
+              During my professional career, I have contributed to impactful projects that demonstrate my expertise in software development and cloud infrastructure:
+            </p>
+            <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <li>
+                Engineered a scalable data pipeline for real-time analytics, achieving a 40% improvement in processing speed and enabling faster decision-making.
+              </li>
+              <li>
+                Designed and implemented a secure API gateway for internal applications, enhancing both security and performance across the organization.
+              </li>
+              <li>
+                Spearheaded the migration of legacy systems to modern cloud infrastructure, reducing operational costs by 25% and improving system reliability.
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   );

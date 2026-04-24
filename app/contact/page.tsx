@@ -10,6 +10,13 @@ export default function Contact() {
     setStatus("submitting");
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    // Honeypot field check
+    if (data.get("_honeypot")) {
+      setStatus("error");
+      return;
+    }
+
     try {
       const res = await fetch("https://getform.io/f/c23a28ac-a108-4589-8f5c-3c8702566925", {
         method: "POST",
@@ -58,6 +65,9 @@ export default function Contact() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Honeypot field for spam protection */}
+            <input type="text" name="_honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email address <span className="text-red-400">*</span></label>
               <input type="email" name="email" id="email" required placeholder="Enter email"
@@ -82,8 +92,8 @@ export default function Contact() {
             <hr className="border-gray-700" />
             <div>
               <label htmlFor="question" className="block text-sm font-medium text-gray-300 mb-1">What would you like to know? <span className="text-red-400">*</span></label>
-              <input type="text" name="question" id="question" required placeholder="Enter Question Here"
-                className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" />
+              <textarea name="question" id="question" required placeholder="Enter Question Here"
+                className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors" rows={4}></textarea>
             </div>
             <hr className="border-gray-700" />
             {status === "error" && (
