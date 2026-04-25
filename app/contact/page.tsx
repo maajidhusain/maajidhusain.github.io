@@ -1,28 +1,61 @@
 "use client";
 
+import Script from "next/script";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 
+declare global {
+  interface Window {
+    Forminit?: new () => {
+      submit: (
+        formId: string,
+        formData: FormData,
+      ) => Promise<{ data?: unknown; error?: { message?: string } }>;
+    };
+  }
+}
+
+const FORM_ID = "t2lrsuk8yxd";
+
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("Something went wrong. Please try again.");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
+
     const form = e.currentTarget;
     const data = new FormData(form);
-    if (data.get("_honeypot")) { setStatus("error"); return; }
+
+    if (!window.Forminit) {
+      setErrorMessage("Form service failed to load. Please refresh and try again.");
+      setStatus("error");
+      return;
+    }
+
     try {
-      const res = await fetch("https://getform.io/f/c23a28ac-a108-4589-8f5c-3c8702566925", {
-        method: "POST", body: data, headers: { Accept: "application/json" },
-      });
-      if (res.ok) { setStatus("success"); form.reset(); }
-      else setStatus("error");
-    } catch { setStatus("error"); }
+      const forminit = new window.Forminit();
+      const { error } = await forminit.submit(FORM_ID, data);
+
+      if (error) {
+        setErrorMessage(error.message || "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setErrorMessage("Something went wrong. Please try again.");
+      form.reset();
+    } catch {
+      setErrorMessage("Something went wrong. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
     <div className="min-h-screen text-slate-900">
+      <Script src="https://forminit.com/sdk/v1/forminit.js" strategy="afterInteractive" />
       <Navbar />
       <main className="relative flex min-h-screen items-start sm:items-center justify-center sm:justify-start px-4 pb-24 pt-24 sm:px-0 sm:py-0 sm:pt-0">
         <div className="w-full max-w-[500px] sm:ml-24 glass-panel rounded-2xl p-6 sm:p-10 flex flex-col gap-6 sm:gap-8 shadow-sm">
@@ -45,11 +78,9 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6 w-full">
-              <input type="text" name="_honeypot" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-
               <input
                 type="text"
-                name="name"
+                name="fi-sender-fullName"
                 required
                 placeholder="Name"
                 className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-base sm:text-lg font-light"
@@ -57,26 +88,26 @@ export default function Contact() {
 
               <input
                 type="email"
-                name="email"
+                name="fi-sender-email"
                 required
                 placeholder="Email Address"
                 className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-base sm:text-lg font-light"
               />
 
               <select
-                name="platform"
+                name="fi-select-reason"
                 required
                 className="glass-input py-3 text-slate-900 text-base sm:text-lg font-light appearance-none bg-transparent cursor-pointer pr-8"
               >
                 <option value="" className="bg-white">Reason for reaching out...</option>
-                <option className="bg-white">Recruiting</option>
-                <option className="bg-white">Connecting</option>
-                <option className="bg-white">Interested Party</option>
-                <option className="bg-white">Other</option>
+                <option value="Recruiting" className="bg-white">Recruiting</option>
+                <option value="Connecting" className="bg-white">Connecting</option>
+                <option value="Interested Party" className="bg-white">Interested Party</option>
+                <option value="Other" className="bg-white">Other</option>
               </select>
 
               <textarea
-                name="question"
+                name="fi-text-message"
                 required
                 placeholder="Your message..."
                 className="glass-input py-3 text-slate-900 placeholder-slate-900/40 text-base sm:text-lg font-light min-h-[100px] sm:min-h-[120px] resize-none"
@@ -84,7 +115,7 @@ export default function Contact() {
               />
 
               {status === "error" && (
-                <p className="text-red-700/80 text-sm">Something went wrong. Please try again.</p>
+                <p className="text-red-700/80 text-sm">{errorMessage}</p>
               )}
 
               <button
