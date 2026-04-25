@@ -127,17 +127,17 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-black/30 backdrop-blur-md">
           <Icon
             size={22}
-            className="text-white/80 group-hover:text-[#ec5b13] transition-colors duration-500"
+            className="text-white/80 group-hover:text-[var(--accent-primary-soft)] transition-colors duration-500"
             strokeWidth={1.5}
           />
         </div>
       </div>
 
       <div>
-        <p className="text-white/50 text-[10px] font-semibold tracking-widest uppercase mb-1">
+        <p className="text-[var(--accent-primary-glow)] text-[10px] font-semibold tracking-widest uppercase mb-1">
           {category}
         </p>
-        <h3 className="text-white text-xl font-display font-medium leading-snug group-hover:text-[#ec5b13] transition-colors duration-300">
+        <h3 className="text-white text-xl font-display font-medium leading-snug group-hover:text-[var(--accent-primary-soft)] transition-colors duration-300">
           {title}
         </h3>
         <p className="text-white/50 text-[11px] font-semibold tracking-widest uppercase mt-1">
@@ -154,7 +154,7 @@ function ProjectCard({ project }: { project: Project }) {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[11px] uppercase tracking-widest font-semibold text-white/40 hover:text-[#ec5b13] transition-colors self-start"
+          className="text-[11px] uppercase tracking-widest font-semibold text-white/40 hover:text-[var(--accent-primary-soft)] transition-colors self-start"
         >
           View →
         </a>
@@ -177,12 +177,16 @@ export default function Portfolio() {
       {/* ── Mobile layout (< md) ── */}
       <main className="relative z-10 md:hidden">
         <div className="px-6 pt-28 pb-4">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent-primary-soft)]">
+            Selected Work
+          </p>
           <h1 className="text-white text-4xl font-display font-bold leading-tight mb-3 drop-shadow-lg">
             The<br />Portfolio
           </h1>
           <p className="text-white/70 text-sm max-w-sm font-light leading-relaxed">
             A curated selection of projects at the intersection of data, AI, and software engineering.
           </p>
+          <div className="mt-5 h-px w-24 bg-gradient-to-r from-[var(--accent-primary)] via-[var(--accent-primary-glow)] to-transparent" />
         </div>
         <StackedProjectCards projects={projects} />
       </main>
@@ -193,12 +197,16 @@ export default function Portfolio() {
 
           {/* Left: title */}
           <div className="lg:w-1/3 lg:pt-32 lg:sticky lg:top-36 lg:self-start">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent-primary-soft)]">
+              Selected Work
+            </p>
             <h1 className="text-white text-5xl md:text-7xl font-display font-bold leading-tight mb-6 drop-shadow-lg">
               The<br />Portfolio
             </h1>
             <p className="text-white/70 text-lg max-w-sm font-light leading-relaxed">
               A curated selection of projects at the intersection of data, AI, and software engineering.
             </p>
+            <div className="mt-8 h-px w-32 bg-gradient-to-r from-[var(--accent-primary)] via-[var(--accent-primary-glow)] to-transparent" />
           </div>
 
           {/* Right: offset two-column grid */}

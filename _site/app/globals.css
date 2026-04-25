@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --accent-primary: #a8441a;
+  --accent-primary-dark: #913a15;
+  --accent-primary-soft: #b24a1d;
+  --accent-primary-glow: #d18845;
+}
+
 * {
   box-sizing: border-box;
 }

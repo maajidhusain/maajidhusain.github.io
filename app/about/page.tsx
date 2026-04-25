@@ -9,24 +9,25 @@ export default function About() {
       <main className="flex min-h-screen items-start sm:items-center justify-center px-4 pb-24 pt-24 sm:px-24 sm:py-0">
         <div className="glass-panel rounded-2xl w-full max-w-[720px] flex flex-col overflow-hidden">
           <div className="flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 pb-4 border-b border-white/20 shrink-0">
-            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border border-white/40 grayscale">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border border-[color:var(--accent-primary)]/35 grayscale">
               <Image src="/images/myheadshot.png" alt="Maajid Husain" width={96} height={96} className="object-cover w-full h-full" />
             </div>
             <div>
               <h1 className="font-display text-2xl sm:text-4xl font-bold tracking-tight">About Me</h1>
-              <p className="text-slate-900/60 text-[11px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] mt-1 sm:mt-2 leading-relaxed">
+              <p className="text-[var(--accent-primary-soft)] text-[11px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] mt-1 sm:mt-2 leading-relaxed">
                 Leesburg, VA · University of Virginia · Capital One
               </p>
+              <div className="mt-3 h-px w-24 bg-gradient-to-r from-[var(--accent-primary)] via-[var(--accent-primary-glow)] to-transparent" />
             </div>
           </div>
           <div className="p-5 sm:p-8 pt-5 sm:pt-6 sm:overflow-y-auto sm:glass-scroll sm:max-h-[calc(100vh-10rem)]">
             <div className="text-sm sm:text-base font-light leading-[2] text-slate-900/80 space-y-6 sm:space-y-8">
               <div>
-                <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-3">Life</h2>
+                <h2 className="font-display text-lg sm:text-xl font-bold text-[var(--accent-primary)] mb-3">Life</h2>
                 <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
               </div>
               <div>
-                <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-3">Reading</h2>
+                <h2 className="font-display text-lg sm:text-xl font-bold text-[var(--accent-primary)] mb-3">Reading</h2>
                 <p>Leisurely reading is something I have always been interested in. Some of my favorites:</p>
                 <ol className="list-decimal list-inside space-y-1 mt-2">
                   <li><em>The Bartimaeus Sequence</em> — Jonathan Stroud</li>
@@ -36,7 +37,7 @@ export default function About() {
                 </ol>
               </div>
               <div>
-                <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-3">Construction &amp; Manual Labor</h2>
+                <h2 className="font-display text-lg sm:text-xl font-bold text-[var(--accent-primary)] mb-3">Construction &amp; Manual Labor</h2>
                 <p>During COVID-19, I found myself with an abundance of free time. I started as an apprentice for a contracting company and picked up many handyman skills:</p>
                 <ul className="list-disc list-inside space-y-1 mb-4 mt-2">
                   <li>Carpentry</li>

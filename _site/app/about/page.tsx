@@ -18,11 +18,11 @@ const bathroomImages = [
 export default function About() {
   return (
     <div className="space-y-12">
-      <h1 className="text-3xl font-bold text-white border-b border-gray-700 pb-4">About</h1>
+      <h1 className="text-3xl font-bold text-white border-b border-[color:var(--accent-primary)]/35 pb-4">About</h1>
 
-      <nav className="bg-gray-900 border border-gray-700 rounded-lg p-4">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Table of Contents</h2>
-        <ol className="list-decimal list-inside space-y-1 text-blue-400">
+      <nav className="bg-gray-900 border border-[color:var(--accent-primary)]/30 rounded-lg p-4">
+        <h2 className="text-sm font-semibold text-[var(--accent-primary-glow)] uppercase tracking-wider mb-2">Table of Contents</h2>
+        <ol className="list-decimal list-inside space-y-1 text-[var(--accent-primary-soft)]">
           <li><a href="#my-life" className="hover:underline">My Life</a></li>
           <li><a href="#about-me" className="hover:underline">About Me</a></li>
           <li><a href="#reading" className="hover:underline">Reading</a></li>
@@ -35,7 +35,7 @@ export default function About() {
         <Slideshow slides={slides} />
       </section>
 
-      <hr className="border-gray-700" />
+      <hr className="border-[color:var(--accent-primary)]/20" />
 
       <section id="about-me">
         <h2 className="text-2xl font-semibold text-white mb-4">2. About My Life</h2>
@@ -44,7 +44,7 @@ export default function About() {
         </p>
       </section>
 
-      <hr className="border-gray-700" />
+      <hr className="border-[color:var(--accent-primary)]/20" />
 
       <section id="reading">
         <h2 className="text-2xl font-semibold text-white mb-4">3. Reading</h2>
@@ -57,7 +57,7 @@ export default function About() {
         </ol>
       </section>
 
-      <hr className="border-gray-700" />
+      <hr className="border-[color:var(--accent-primary)]/20" />
 
       <section id="construction">
         <h2 className="text-2xl font-semibold text-white mb-4">4. Construction + Manual Labor</h2>
@@ -76,7 +76,7 @@ export default function About() {
         </p>
         <div className="flex flex-wrap gap-4">
           {bathroomImages.map((img) => (
-            <div key={img.src} className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden">
+            <div key={img.src} className="bg-gray-900 border border-[color:var(--accent-primary)]/25 rounded-lg overflow-hidden">
               <a href={img.src} target="_blank" rel="noopener noreferrer">
                 <div className="relative w-60 h-48">
                   <Image
@@ -88,7 +88,7 @@ export default function About() {
                   />
                 </div>
               </a>
-              <p className="text-gray-400 text-sm text-center px-3 py-2">{img.desc}</p>
+              <p className="text-[var(--accent-primary-glow)] text-sm text-center px-3 py-2">{img.desc}</p>
             </div>
           ))}
         </div>
