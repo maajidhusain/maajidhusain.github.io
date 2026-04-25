@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Maajid Husain",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="relative z-10 min-h-screen">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
