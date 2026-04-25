@@ -6,20 +6,20 @@ export default function About() {
   return (
     <div className="min-h-screen text-slate-900">
       <Navbar />
-      <main className="flex min-h-screen pt-16 sm:pt-24 items-start sm:items-center justify-center px-4 sm:px-24 py-6 sm:py-0">
+      <main className="flex min-h-screen items-start sm:items-center justify-center px-4 pb-8 pt-24 sm:px-24 sm:py-0">
         <div className="glass-panel rounded-2xl w-full max-w-[720px] flex flex-col overflow-hidden">
-          <div className="flex items-center gap-4 sm:gap-6 p-5 sm:p-8 pb-4 border-b border-white/20 shrink-0">
+          <div className="flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 pb-4 border-b border-white/20 shrink-0">
             <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border border-white/40 grayscale">
               <Image src="/images/myheadshot.png" alt="Maajid Husain" width={96} height={96} className="object-cover w-full h-full" />
             </div>
             <div>
               <h1 className="font-display text-2xl sm:text-4xl font-bold tracking-tight">About Me</h1>
-              <p className="text-slate-900/60 text-xs uppercase tracking-[2px] mt-1 sm:mt-2">
+              <p className="text-slate-900/60 text-[11px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] mt-1 sm:mt-2 leading-relaxed">
                 Leesburg, VA · University of Virginia · Capital One
               </p>
             </div>
           </div>
-          <div className="p-5 sm:p-8 pt-5 sm:pt-6 overflow-y-auto glass-scroll max-h-[calc(100vh-12rem)] sm:max-h-[calc(100vh-10rem)]">
+          <div className="p-5 sm:p-8 pt-5 sm:pt-6 sm:overflow-y-auto sm:glass-scroll sm:max-h-[calc(100vh-10rem)]">
             <div className="text-sm sm:text-base font-light leading-[2] text-slate-900/80 space-y-6 sm:space-y-8">
               <div>
                 <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-3">Life</h2>
@@ -46,7 +46,7 @@ export default function About() {
                   <li>Drywall</li>
                 </ul>
                 <p>Using these skills, I completed many projects at home — from building a large firepit to renovating two bathrooms.</p>
-                <div className="mt-6 flex justify-center">
+                <div className="mt-6 flex justify-center overflow-hidden">
                   <ImgStack images={["/images/bathroombefore.png", "/images/bathroomafter1.png", "/images/bathroomafter2.png"]} />
                 </div>
               </div>

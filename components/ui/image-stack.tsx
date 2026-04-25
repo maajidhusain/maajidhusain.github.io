@@ -44,8 +44,8 @@ export default function ImgStack({ images }: ImgStackProps) {
   const advance = () => setTopIndex((prev) => (prev + 1) % images.length);
 
   return (
-    <div className="flex flex-col items-center gap-8">
-      <div className="relative w-72 h-56" style={{ perspective: "600px" }}>
+    <div className="flex w-full max-w-[18rem] sm:max-w-none flex-col items-center gap-6 sm:gap-8">
+      <div className="relative h-52 w-full sm:h-56 sm:w-72" style={{ perspective: "600px" }}>
         {images.map((src, i) => (
           <div
             key={i}
@@ -58,7 +58,7 @@ export default function ImgStack({ images }: ImgStackProps) {
               alt={`Photo ${i + 1}`}
               fill
               className="object-cover"
-              sizes="288px"
+              sizes="(max-width: 640px) 100vw, 288px"
             />
           </div>
         ))}
