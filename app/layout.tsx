@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-[#FDFBF7] text-slate-900 overflow-x-hidden overflow-y-auto sm:overflow-hidden min-h-screen relative">
         <div className="fixed inset-0 z-0 animate-fade-in-bg">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-left bg-no-repeat sm:bg-center"
             style={{ backgroundImage: "url('/images/maajidhusain%20website%20background.png')" }}
           />
         </div>
