@@ -53,7 +53,7 @@ export default function About() {
             <div className="space-y-9 pt-8 text-[15px] font-light leading-8 text-slate-900/80 sm:space-y-12 sm:text-lg sm:leading-[2]">
               <div>
                 <h2 className="accent-text font-display mb-3 text-xl font-bold sm:text-2xl">Life</h2>
-                <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
+                <p>In my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
               </div>
 
               <div>
