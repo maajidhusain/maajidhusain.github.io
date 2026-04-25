@@ -1,11 +1,11 @@
 export default function Portfolio() {
   return (
     <div className="space-y-12">
-      <h1 className="text-3xl font-bold text-white border-b border-[color:var(--accent-primary)]/35 pb-4">Portfolio</h1>
+      <h1 className="accent-border text-3xl font-bold text-white border-b pb-4">Portfolio</h1>
 
-      <nav className="bg-gray-900 border border-[color:var(--accent-primary)]/30 rounded-lg p-4">
-        <h2 className="text-sm font-semibold text-[var(--accent-primary-glow)] uppercase tracking-wider mb-2">Table of Contents</h2>
-        <ol className="list-decimal list-inside space-y-1 text-[var(--accent-primary-soft)]">
+      <nav className="accent-border-soft bg-gray-900 border rounded-lg p-4">
+        <h2 className="accent-glow-text text-sm font-semibold uppercase tracking-wider mb-2">Table of Contents</h2>
+        <ol className="accent-soft-text list-decimal list-inside space-y-1">
           <li>
             <a href="#coursework" className="hover:underline">Relevant Coursework</a>
             <ul className="ml-6 mt-1 space-y-1 list-disc list-inside">
@@ -22,15 +22,15 @@ export default function Portfolio() {
       <section id="coursework">
         <h2 className="text-2xl font-semibold text-white mb-6">Relevant Coursework</h2>
         <div className="space-y-6">
-          <div id="first-year" className="bg-gray-900 border border-[color:var(--accent-primary)]/25 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-[var(--accent-primary-soft)] mb-3">First Year</h3>
+          <div id="first-year" className="accent-border-soft bg-gray-900 border rounded-lg p-5">
+            <h3 className="accent-soft-text text-lg font-semibold mb-3">First Year</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 1602</span> Introduction to Data Science in Python</li>
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">ENWR 1520</span> Writing about Housing Inequality</li>
             </ul>
           </div>
-          <div id="second-year" className="bg-gray-900 border border-[color:var(--accent-primary)]/25 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-[var(--accent-primary-soft)] mb-3">Second Year</h3>
+          <div id="second-year" className="accent-border-soft bg-gray-900 border rounded-lg p-5">
+            <h3 className="accent-soft-text text-lg font-semibold mb-3">Second Year</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 2120</span> Introduction to Statistical Analysis</li>
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3110</span> Foundations of Statistics (Probability and Linear Algebra)</li>
@@ -39,8 +39,8 @@ export default function Portfolio() {
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">CS 2130</span> Computer Systems and Organization</li>
             </ul>
           </div>
-          <div id="third-year" className="bg-gray-900 border border-[color:var(--accent-primary)]/25 rounded-lg p-5">
-            <h3 className="text-lg font-semibold text-[var(--accent-primary-soft)] mb-3">Third Year <span className="text-gray-500 text-sm font-normal">(In Progress)</span></h3>
+          <div id="third-year" className="accent-border-soft bg-gray-900 border rounded-lg p-5">
+            <h3 className="accent-soft-text text-lg font-semibold mb-3">Third Year <span className="text-gray-500 text-sm font-normal">(In Progress)</span></h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3220</span> Introduction to Regression Analysis</li>
               <li className="flex gap-2"><span className="text-gray-500 font-mono text-sm w-24 flex-shrink-0">STAT 3120</span> Mathematical Statistics</li>
@@ -52,7 +52,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <hr className="border-[color:var(--accent-primary)]/20" />
+      <hr className="accent-border-soft" />
 
       <section id="skills">
         <h2 className="text-2xl font-semibold text-white mb-6">Skills</h2>
@@ -85,7 +85,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <hr className="border-[color:var(--accent-primary)]/20" />
+      <hr className="accent-border-soft" />
 
       <section id="projects">
         <h2 className="text-2xl font-semibold text-white mb-4">Projects</h2>

@@ -9,6 +9,26 @@
   --accent-primary-glow: #d18845;
 }
 
+.accent-text {
+  color: var(--accent-primary);
+}
+
+.accent-soft-text {
+  color: var(--accent-primary-soft);
+}
+
+.accent-glow-text {
+  color: var(--accent-primary-glow);
+}
+
+.accent-border {
+  border-color: rgba(168, 68, 26, 0.35);
+}
+
+.accent-border-soft {
+  border-color: rgba(168, 68, 26, 0.25);
+}
+
 * {
   box-sizing: border-box;
 }
