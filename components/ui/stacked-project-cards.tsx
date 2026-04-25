@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,8 @@ type Project = {
   category: string;
   description: string;
   link?: string;
+  image: string;
+  imageAlt: string;
   Icon: LucideIcon;
 };
 
@@ -57,7 +60,7 @@ export function StackedProjectCards({ projects }: { projects: Project[] }) {
   return (
     <div>
       {projects.map((project, index) => {
-        const { title, tags, category, description, link, Icon } = project;
+        const { title, tags, category, description, link, image, imageAlt, Icon } = project;
         // Each card peeks 16px below the previous, starting just below the navbar
         const topPad = 104 + index * 16;
 
@@ -75,22 +78,30 @@ export function StackedProjectCards({ projects }: { projects: Project[] }) {
               paddingLeft: "16px",
               paddingRight: "16px",
             }}
-          >
+            >
             <div
               ref={(el) => { cardRefs.current[index] = el; }}
               className="glass-panel rounded-2xl p-5 flex flex-col gap-4 w-full"
               style={{ transformOrigin: "top center" }}
             >
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 flex-shrink-0">
-                  <Icon size={22} className="text-white/50" strokeWidth={1.25} />
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-white/5">
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+                <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-black/30 backdrop-blur-md">
+                  <Icon size={20} className="text-white/80" strokeWidth={1.5} />
                 </div>
-                <p className="text-white/50 text-[10px] font-semibold tracking-widest uppercase">
-                  {category}
-                </p>
               </div>
 
               <div>
+                <p className="text-white/50 text-[10px] font-semibold tracking-widest uppercase mb-1">
+                  {category}
+                </p>
                 <h3 className="text-white text-lg font-display font-medium leading-snug">
                   {title}
                 </h3>
