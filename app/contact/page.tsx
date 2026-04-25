@@ -54,10 +54,10 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen text-slate-900">
+    <div className="h-screen overflow-y-auto glass-scroll text-slate-900">
       <Script src="https://forminit.com/sdk/v1/forminit.js" strategy="afterInteractive" />
       <Navbar />
-      <main className="relative flex min-h-screen items-start sm:items-center justify-center sm:justify-start px-4 pb-24 pt-24 sm:px-0 sm:py-0 sm:pt-0">
+      <main className="relative flex min-h-full items-start justify-center sm:justify-start px-4 pb-24 pt-24 sm:px-0 sm:pb-24 sm:pt-28">
         <div className="w-full max-w-[500px] sm:ml-24 glass-panel rounded-2xl p-6 sm:p-10 flex flex-col gap-6 sm:gap-8 shadow-sm">
           <div className="flex flex-col gap-2">
             <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight">Get in Touch</h1>

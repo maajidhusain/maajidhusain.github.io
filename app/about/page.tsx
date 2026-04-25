@@ -4,9 +4,9 @@ import ImgStack from "@/components/ui/image-stack";
 
 export default function About() {
   return (
-    <div className="min-h-screen text-slate-900">
+    <div className="h-screen overflow-y-auto glass-scroll text-slate-900">
       <Navbar />
-      <main className="flex min-h-screen items-start sm:items-center justify-center px-4 pb-24 pt-24 sm:px-24 sm:py-0">
+      <main className="flex min-h-full items-start justify-center px-4 pb-24 pt-24 sm:px-24 sm:pb-24 sm:pt-28">
         <div className="glass-panel rounded-2xl w-full max-w-[720px] flex flex-col overflow-hidden">
           <div className="flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 pb-4 border-b border-white/20 shrink-0">
             <div className="accent-border w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border grayscale">
@@ -20,7 +20,7 @@ export default function About() {
               <div className="accent-divider mt-3 h-px w-24" />
             </div>
           </div>
-          <div className="p-5 sm:p-8 pt-5 sm:pt-6 sm:overflow-y-auto sm:glass-scroll sm:max-h-[calc(100vh-10rem)]">
+          <div className="p-5 sm:p-8 pt-5 sm:pt-6">
             <div className="text-sm sm:text-base font-light leading-[2] text-slate-900/80 space-y-6 sm:space-y-8">
               <div>
                 <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Life</h2>
