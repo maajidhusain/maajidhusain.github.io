@@ -32,10 +32,10 @@ const favoriteBooks = [
 
 export default function About() {
   return (
-    <div className="h-screen overflow-y-auto glass-scroll text-slate-900">
+    <div className="min-h-screen text-slate-900 sm:h-screen sm:overflow-y-auto sm:glass-scroll">
       <Navbar />
       <main className="px-4 pb-24 pt-24 sm:px-10 lg:px-16 xl:px-24 sm:pt-28">
-        <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-start">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-start lg:gap-14">
           <section className="max-w-3xl">
             <div className="flex flex-col items-start gap-4 border-b border-white/20 pb-6 sm:flex-row sm:items-center sm:gap-6 sm:pb-8">
               <div className="accent-border h-16 w-16 overflow-hidden rounded-full border grayscale sm:h-24 sm:w-24">
@@ -50,7 +50,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="space-y-10 pt-8 text-base font-light leading-[2] text-slate-900/80 sm:space-y-12 sm:text-lg">
+            <div className="space-y-9 pt-8 text-[15px] font-light leading-8 text-slate-900/80 sm:space-y-12 sm:text-lg sm:leading-[2]">
               <div>
                 <h2 className="accent-text font-display mb-3 text-xl font-bold sm:text-2xl">Life</h2>
                 <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
@@ -66,6 +66,12 @@ export default function About() {
                     </li>
                   ))}
                 </ol>
+                <div className="mt-5 lg:hidden">
+                  <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Favorite Books</p>
+                  <div className="mt-3">
+                    <BookCoverMarquee books={favoriteBooks} />
+                  </div>
+                </div>
               </div>
 
               <div>
@@ -79,11 +85,20 @@ export default function About() {
                   <li>Drywall</li>
                 </ul>
                 <p className="mt-4">Using these skills, I completed many projects at home, from building a large firepit to renovating two bathrooms.</p>
+                <div className="mt-6 glass-panel rounded-[24px] border border-white/30 p-4 shadow-[0_18px_50px_rgba(15,23,42,0.1)] sm:p-6 lg:hidden">
+                  <div className="mb-4">
+                    <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Renovation Photos</p>
+                    <h2 className="font-display mt-2 text-xl font-bold text-slate-900 sm:text-3xl">Bathroom Renovation</h2>
+                  </div>
+                  <div className="flex justify-center overflow-hidden">
+                    <ImgStack images={["/images/bathroombefore.png", "/images/bathroomafter1.png", "/images/bathroomafter2.png"]} />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          <aside className="lg:sticky lg:top-28">
+          <aside className="hidden lg:sticky lg:top-28 lg:block">
             <div className="space-y-8">
               <div>
                 <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Favorite Books</p>
