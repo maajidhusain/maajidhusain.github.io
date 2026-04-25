@@ -113,3 +113,26 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   animation: slide-up-fade 1.5s ease-out 0.5s forwards;
 }
+
+@keyframes book-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 10px)); }
+}
+
+@keyframes book-marquee-reverse {
+  from { transform: translateX(calc(-50% - 10px)); }
+  to { transform: translateX(0); }
+}
+
+.animate-book-marquee {
+  animation: book-marquee 26s linear infinite;
+}
+
+.animate-book-marquee-reverse {
+  animation: book-marquee-reverse 30s linear infinite;
+}
+
+.book-marquee:hover .animate-book-marquee,
+.book-marquee:hover .animate-book-marquee-reverse {
+  animation-play-state: paused;
+}

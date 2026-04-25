@@ -1,6 +1,34 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import BookCoverMarquee from "@/components/ui/book-cover-marquee";
 import ImgStack from "@/components/ui/image-stack";
+
+const favoriteBooks = [
+  {
+    title: "The Bartimaeus Sequence",
+    author: "Jonathan Stroud",
+    cover: "/images/books/the-amulet-of-samarkand.png",
+    coverAlt: "Cover of The Amulet of Samarkand, used here to represent The Bartimaeus Sequence.",
+  },
+  {
+    title: "Great Expectations",
+    author: "Charles Dickens",
+    cover: "/images/books/great-expectations.jpg",
+    coverAlt: "Title page artwork for Great Expectations by Charles Dickens.",
+  },
+  {
+    title: "The Autobiography of Malcolm X",
+    author: "Malcolm X and Alex Haley",
+    cover: "/images/books/the-autobiography-of-malcolm-x.jpg",
+    coverAlt: "First-edition cover of The Autobiography of Malcolm X.",
+  },
+  {
+    title: "Hatchet",
+    author: "Gary Paulsen",
+    cover: "/images/books/hatchet.jpg",
+    coverAlt: "First-edition cover of Hatchet by Gary Paulsen.",
+  },
+];
 
 export default function About() {
   return (
@@ -30,11 +58,15 @@ export default function About() {
                 <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Reading</h2>
                 <p>Leisurely reading is something I have always been interested in. Some of my favorites:</p>
                 <ol className="list-decimal list-inside space-y-1 mt-2">
-                  <li><em>The Bartimaeus Sequence</em> — Jonathan Stroud</li>
-                  <li><em>Great Expectations</em> — Charles Dickens</li>
-                  <li><em>The Autobiography of Malcolm X</em> — Malcolm X &amp; Alex Haley</li>
-                  <li><em>Hatchet</em> — Gary Paulsen</li>
+                  {favoriteBooks.map((book) => (
+                    <li key={book.title}>
+                      <em>{book.title}</em> — {book.author}
+                    </li>
+                  ))}
                 </ol>
+                <div className="mt-6">
+                  <BookCoverMarquee books={favoriteBooks} />
+                </div>
               </div>
               <div>
                 <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Construction &amp; Manual Labor</h2>
