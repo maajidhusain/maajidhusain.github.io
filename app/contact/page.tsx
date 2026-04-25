@@ -24,7 +24,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen text-slate-900">
       <Navbar />
-      <main className="relative flex min-h-screen items-start sm:items-center justify-center sm:justify-start px-4 py-8 pt-24 sm:px-0 sm:py-0 sm:pt-0">
+      <main className="relative flex min-h-screen items-start sm:items-center justify-center sm:justify-start px-4 pb-24 pt-24 sm:px-0 sm:py-0 sm:pt-0">
         <div className="w-full max-w-[500px] sm:ml-24 glass-panel rounded-2xl p-6 sm:p-10 flex flex-col gap-6 sm:gap-8 shadow-sm">
           <div className="flex flex-col gap-2">
             <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight">Get in Touch</h1>

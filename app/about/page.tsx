@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="min-h-screen text-slate-900">
       <Navbar />
-      <main className="flex min-h-screen items-start sm:items-center justify-center px-4 pb-8 pt-24 sm:px-24 sm:py-0">
+      <main className="flex min-h-screen items-start sm:items-center justify-center px-4 pb-24 pt-24 sm:px-24 sm:py-0">
         <div className="glass-panel rounded-2xl w-full max-w-[720px] flex flex-col overflow-hidden">
           <div className="flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 pb-4 border-b border-white/20 shrink-0">
             <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border border-white/40 grayscale">
