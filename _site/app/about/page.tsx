@@ -46,17 +46,6 @@ export default function About() {
 
       <hr className="accent-border-soft" />
 
-      <section id="reading">
-        <h2 className="text-2xl font-semibold text-white mb-4">3. Reading</h2>
-        <p className="text-gray-300 mb-3">Leisurely reading is something I have always been interested in. Some of my favorite books include:</p>
-        <ol className="list-decimal list-inside space-y-2 text-gray-300">
-          <li><em>The Bartimaeus Sequence</em> by Jonathan Stroud</li>
-          <li><em>Great Expectations</em> by Charles Dickens</li>
-          <li><em>The Autobiography of Malcolm X</em> by Malcolm X and Alex Haley</li>
-          <li><em>Hatchet</em> by Gary Paulsen</li>
-        </ol>
-      </section>
-
       <hr className="accent-border-soft" />
 
       <section id="construction">

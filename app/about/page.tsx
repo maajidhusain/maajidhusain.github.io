@@ -34,57 +34,75 @@ export default function About() {
   return (
     <div className="h-screen overflow-y-auto glass-scroll text-slate-900">
       <Navbar />
-      <main className="flex min-h-full items-start justify-center px-4 pb-24 pt-24 sm:px-24 sm:pb-24 sm:pt-28">
-        <div className="glass-panel rounded-2xl w-full max-w-[720px] flex flex-col overflow-hidden">
-          <div className="flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-8 pb-4 border-b border-white/20 shrink-0">
-            <div className="accent-border w-16 h-16 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border grayscale">
-              <Image src="/images/myheadshot.png" alt="Maajid Husain" width={96} height={96} className="object-cover w-full h-full" />
-            </div>
-            <div>
-              <h1 className="font-display text-2xl sm:text-4xl font-bold tracking-tight">About Me</h1>
-              <p className="accent-soft-text text-[11px] sm:text-xs uppercase tracking-[1.5px] sm:tracking-[2px] mt-1 sm:mt-2 leading-relaxed">
-                Leesburg, VA · University of Virginia · Capital One
-              </p>
-              <div className="accent-divider mt-3 h-px w-24" />
-            </div>
-          </div>
-          <div className="p-5 sm:p-8 pt-5 sm:pt-6">
-            <div className="text-sm sm:text-base font-light leading-[2] text-slate-900/80 space-y-6 sm:space-y-8">
-              <div>
-                <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Life</h2>
-                <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
+      <main className="px-4 pb-24 pt-24 sm:px-10 lg:px-16 xl:px-24 sm:pt-28">
+        <div className="mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-start">
+          <section className="max-w-3xl">
+            <div className="flex flex-col items-start gap-4 border-b border-white/20 pb-6 sm:flex-row sm:items-center sm:gap-6 sm:pb-8">
+              <div className="accent-border h-16 w-16 overflow-hidden rounded-full border grayscale sm:h-24 sm:w-24">
+                <Image src="/images/myheadshot.png" alt="Maajid Husain" width={96} height={96} className="h-full w-full object-cover" />
               </div>
               <div>
-                <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Reading</h2>
+                <h1 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">About Me</h1>
+                <p className="accent-soft-text mt-1 text-[11px] uppercase leading-relaxed tracking-[1.5px] sm:mt-2 sm:text-xs sm:tracking-[2px]">
+                  Leesburg, VA · University of Virginia · Capital One
+                </p>
+                <div className="accent-divider mt-3 h-px w-24" />
+              </div>
+            </div>
+
+            <div className="space-y-10 pt-8 text-base font-light leading-[2] text-slate-900/80 sm:space-y-12 sm:text-lg">
+              <div>
+                <h2 className="accent-text font-display mb-3 text-xl font-bold sm:text-2xl">Life</h2>
+                <p>I am a student first, but in my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.</p>
+              </div>
+
+              <div>
+                <h2 className="accent-text font-display mb-3 text-xl font-bold sm:text-2xl">Reading</h2>
                 <p>Leisurely reading is something I have always been interested in. Some of my favorites:</p>
-                <ol className="list-decimal list-inside space-y-1 mt-2">
+                <ol className="mt-3 list-decimal space-y-2 pl-5">
                   {favoriteBooks.map((book) => (
                     <li key={book.title}>
                       <em>{book.title}</em> — {book.author}
                     </li>
                   ))}
                 </ol>
-                <div className="mt-6">
-                  <BookCoverMarquee books={favoriteBooks} />
-                </div>
               </div>
+
               <div>
-                <h2 className="accent-text font-display text-lg sm:text-xl font-bold mb-3">Construction &amp; Manual Labor</h2>
+                <h2 className="accent-text font-display mb-3 text-xl font-bold sm:text-2xl">Construction &amp; Manual Labor</h2>
                 <p>During COVID-19, I found myself with an abundance of free time. I started as an apprentice for a contracting company and picked up many handyman skills:</p>
-                <ul className="list-disc list-inside space-y-1 mb-4 mt-2">
+                <ul className="mt-3 list-disc space-y-1 pl-5">
                   <li>Carpentry</li>
                   <li>Tile work</li>
                   <li>Electrician skills</li>
                   <li>Masonry</li>
                   <li>Drywall</li>
                 </ul>
-                <p>Using these skills, I completed many projects at home — from building a large firepit to renovating two bathrooms.</p>
-                <div className="mt-6 flex justify-center overflow-hidden">
+                <p className="mt-4">Using these skills, I completed many projects at home, from building a large firepit to renovating two bathrooms.</p>
+              </div>
+            </div>
+          </section>
+
+          <aside className="lg:sticky lg:top-28">
+            <div className="space-y-8">
+              <div>
+                <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Favorite Books</p>
+                <div className="mt-3">
+                  <BookCoverMarquee books={favoriteBooks} />
+                </div>
+              </div>
+
+              <div className="glass-panel rounded-[28px] border border-white/30 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)] sm:p-6">
+                <div className="mb-5">
+                  <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Renovation Photos</p>
+                  <h2 className="font-display mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Bathroom Renovation</h2>
+                </div>
+                <div className="flex justify-center overflow-hidden">
                   <ImgStack images={["/images/bathroombefore.png", "/images/bathroomafter1.png", "/images/bathroomafter2.png"]} />
                 </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </main>
     </div>
