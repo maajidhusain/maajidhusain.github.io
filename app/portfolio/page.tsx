@@ -1,4 +1,7 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
+import { StackedProjectCards } from "@/components/ui/stacked-project-cards";
 import {
   Trophy,
   Bot,
@@ -144,7 +147,21 @@ export default function Portfolio() {
 
       <Navbar variant="dark" />
 
-      <main className="relative z-10 px-6 md:px-12 lg:px-24 pt-36 pb-24">
+      {/* ── Mobile layout (< md) ── */}
+      <main className="relative z-10 md:hidden">
+        <div className="px-6 pt-28 pb-4">
+          <h1 className="text-white text-4xl font-display font-bold leading-tight mb-3 drop-shadow-lg">
+            The<br />Portfolio
+          </h1>
+          <p className="text-white/70 text-sm max-w-sm font-light leading-relaxed">
+            A curated selection of projects at the intersection of data, AI, and software engineering.
+          </p>
+        </div>
+        <StackedProjectCards projects={projects} />
+      </main>
+
+      {/* ── Desktop layout (≥ md) ── */}
+      <main className="relative z-10 px-6 md:px-12 lg:px-24 pt-36 pb-24 hidden md:block">
         <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-12 lg:gap-24">
 
           {/* Left: title */}
@@ -158,7 +175,7 @@ export default function Portfolio() {
           </div>
 
           {/* Right: offset two-column grid */}
-          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 pb-12">
+          <div className="lg:w-2/3 grid grid-cols-2 gap-8 md:gap-10 pb-12">
             {/* Column 1 — starts lower */}
             <div className="flex flex-col gap-8 md:gap-10 md:mt-24">
               {col1.map((p) => (
