@@ -64,8 +64,7 @@ function BookRow({
 
 export default function BookCoverMarquee({ books }: BookCoverMarqueeProps) {
   return (
-    <div className="book-marquee relative overflow-hidden rounded-[32px] border border-white/50 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,250,252,0.84))] p-4 shadow-[0_24px_80px_rgba(15,23,42,0.12)] sm:p-6">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(217,119,6,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.08),transparent_32%)]" />
+    <div className="book-marquee glass-panel relative overflow-hidden rounded-[28px] border border-white/30 p-4 shadow-[0_24px_80px_rgba(15,23,42,0.12)] sm:p-6">
       <div className="relative space-y-4">
         <BookRow books={books} speed={26} />
         <BookRow books={[...books].reverse()} reverse speed={30} />
