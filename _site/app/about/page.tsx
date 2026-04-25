@@ -40,7 +40,7 @@ export default function About() {
       <section id="about-me">
         <h2 className="text-2xl font-semibold text-white mb-4">2. About My Life</h2>
         <p className="text-gray-300 leading-relaxed">
-          Im my free time I really enjoy exploring nature, going longboarding, spending time with friends, and working towards my career and academic goals.
+          Im my free time I really enjoy exploring nature, spending time with friends, and working towards my career and academic goals.
         </p>
       </section>
 
