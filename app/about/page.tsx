@@ -32,7 +32,7 @@ const favoriteBooks = [
 
 export default function About() {
   return (
-    <div className="min-h-screen text-slate-900 sm:h-screen sm:overflow-y-auto sm:glass-scroll">
+    <div className="min-h-screen overflow-x-hidden text-slate-900 sm:h-screen sm:overflow-y-auto sm:glass-scroll">
       <Navbar />
       <main className="px-4 pb-24 pt-24 sm:px-10 lg:px-16 xl:px-24 sm:pt-28">
         <div className="mx-auto grid w-full max-w-7xl gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-start lg:gap-14">
@@ -68,8 +68,11 @@ export default function About() {
                 </ol>
                 <div className="mt-5 lg:hidden">
                   <p className="accent-soft-text text-[11px] uppercase tracking-[2px] sm:text-xs">Favorite Books</p>
-                  <div className="mt-3">
-                    <BookCoverMarquee books={favoriteBooks} />
+                  <div className="mt-3 flex justify-center">
+                    <ImgStack
+                      images={favoriteBooks.map((b) => b.cover)}
+                      containerClass="relative h-64 w-44"
+                    />
                   </div>
                 </div>
               </div>

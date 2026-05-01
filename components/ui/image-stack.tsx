@@ -5,6 +5,7 @@ import { useState } from "react";
 
 interface ImgStackProps {
   images: string[];
+  containerClass?: string;
 }
 
 const STACK_ROTATIONS = [4, -3, 6, -5, 2];
@@ -16,7 +17,7 @@ const STACK_OFFSETS = [
   { x: 6, y: 4 },
 ];
 
-export default function ImgStack({ images }: ImgStackProps) {
+export default function ImgStack({ images, containerClass }: ImgStackProps) {
   const [topIndex, setTopIndex] = useState(0);
 
   const getCardStyle = (imageIndex: number) => {
@@ -45,7 +46,7 @@ export default function ImgStack({ images }: ImgStackProps) {
 
   return (
     <div className="flex w-full max-w-[18rem] sm:max-w-none flex-col items-center gap-6 sm:gap-8">
-      <div className="relative h-52 w-full sm:h-56 sm:w-72" style={{ perspective: "600px" }}>
+      <div className={containerClass ?? "relative h-52 w-full sm:h-56 sm:w-72"} style={{ perspective: "600px" }}>
         {images.map((src, i) => (
           <div
             key={i}
